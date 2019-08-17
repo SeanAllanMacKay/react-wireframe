@@ -1,30 +1,25 @@
 import React from 'react';
 
-import { Switch, Route, Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
-
 import useScreenSize from './hooks/useScreenSize'
+import { ScreenProvider } from './context/ScreenContext'
 
-import { Button } from '../src/components/Button';
-
-let history = createBrowserHistory();
+import Site from './pages'
+import Header from './components/Header'
+import Social from './components/Social'
 
 export default () => {
   const [screenSize] = useScreenSize();
-  console.log(screenSize)
   return (
-    <Router history={history}>
-      <Switch>
-        <Route 
-          exact
-          path={"/"}
-          render={() => 
-            <Button
-              content="Test"
-            />
-          }
-        />
-      </Switch>
-    </Router>
+    <ScreenProvider value={screenSize}>
+      <Header />
+      <Social />
+      <div
+        style={{
+          paddingTop: screenSize.small ? '30px' : '48px'
+        }}
+      >
+        <Site />
+      </div>
+    </ScreenProvider>
   );
 };
