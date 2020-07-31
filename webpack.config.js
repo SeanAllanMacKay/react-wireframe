@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const backendConfig = {
@@ -16,6 +17,17 @@ const backendConfig = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { modules: true, exportOnlyLocals: false },
+          },
+          'sass-loader',
+        ],
+      },
     ],
   },
   externals: [nodeExternals()],
@@ -26,6 +38,11 @@ const backendConfig = {
       '@middleware': path.resolve(__dirname, './server/middleware'),
     },
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name]-[contenthash].css',
+    }),
+  ],
 };
 
 const frontendConfig = {
