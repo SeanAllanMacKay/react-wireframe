@@ -34,4 +34,15 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, './src/components'),
+      '@routes': path.resolve(__dirname, './src/routes'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@actions': path.resolve(__dirname, './src/actions'),
+      '@api/routes': path.resolve(__dirname, './server/routes'),
+      '@api/services': path.resolve(__dirname, './server/services'),
+      '@api/middleware': path.resolve(__dirname, './server/middleware'),
+    },
+  },
 };
