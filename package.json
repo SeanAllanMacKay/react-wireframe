@@ -3,25 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "server": "node --experimental-modules ./build/server",
-    "dev": "nodemon",
-    "start": "npm run build && npm run server",
-    "clean": "rimraf ./build/server",
-    "transpile": "babel src --out-dir build/src && babel server --out-dir build/server",
-    "build": "npm run clean && npm run transpile",
+    "dev": "webpack-dev-server --mode=development --watch",
+    "start": "node ./dist/server",
+    "build": "webpack --mode production",
     "storybook": "start-storybook"
-  },
-  "nodemonConfig": {
-    "exec": "npm run build && npm run server",
-    "watch": [
-      "server/*",
-      "src/*"
-    ],
-    "ignore": [
-      "*.story.js"
-    ]
   },
   "author": "Sean MacKay",
   "license": "ISC",
@@ -34,7 +20,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
-    "storybook": "^5.3.19"
+    "storybook": "^5.3.19",
+    "webpack-node-externals": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
