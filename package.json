@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.10.5",
+    "@epegzz/sass-vars-loader": "^6.0.0",
     "babel-register": "^6.26.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

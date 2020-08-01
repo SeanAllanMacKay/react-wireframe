@@ -53,6 +53,10 @@ const frontendConfig = {
         use: 'babel-loader',
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.scss$/,
         use: [
           'style-loader',
@@ -61,6 +65,17 @@ const frontendConfig = {
             options: { modules: true },
           },
           'sass-loader',
+          {
+            loader: '@epegzz/sass-vars-loader',
+            options: {
+              syntax: 'scss',
+              files: [
+                path.resolve(__dirname, 'src/theme/colors.js'),
+                path.resolve(__dirname, 'src/theme/fonts.js'),
+                path.resolve(__dirname, 'src/theme/spacing.js'),
+              ],
+            },
+          },
         ],
       },
       {
@@ -81,6 +96,7 @@ const frontendConfig = {
       '@routes': path.resolve(__dirname, './src/routes'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@actions': path.resolve(__dirname, './src/actions'),
+      '@contexts': path.resolve(__dirname, './src/contexts'),
     },
   },
 };
