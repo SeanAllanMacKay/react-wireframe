@@ -18,7 +18,7 @@ const backendConfig = {
         use: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
