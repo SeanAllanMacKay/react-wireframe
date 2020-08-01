@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './styles.scss';
+import { test } from './styles.scss';
 
-const { test } = styles;
-console.log(styles);
-
-export default () => <button className={test}>test</button>;
+export default ({ onClick, children, tooltip, popover, disabled, variant }) => (
+  <button onClick={onClick} disabled={disabled} className={test}>
+    {children}
+  </button>
+);

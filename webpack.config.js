@@ -17,17 +17,6 @@ const backendConfig = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
-      {
-        test: /\.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: { modules: true, exportOnlyLocals: false },
-          },
-          'sass-loader',
-        ],
-      },
     ],
   },
   externals: [nodeExternals()],
@@ -64,8 +53,15 @@ const frontendConfig = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { modules: true },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|j?g|svg|gif)?$/,

@@ -1,8 +1,28 @@
 import React from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
-class App extends React.Component {
-  render() {
-    return <div>My App Component</div>;
-  }
-}
-export default App;
+import Button from '@components/Button';
+
+export default () => {
+  const history = useHistory();
+
+  return (
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={() => {
+          return <Button onClick={() => history.push('/test')}>Test</Button>;
+        }}
+      />
+
+      <Route
+        exact
+        path="/test"
+        render={() => {
+          return <Button onClick={() => history.goBack()}>Test</Button>;
+        }}
+      />
+    </Switch>
+  );
+};

@@ -13,12 +13,14 @@
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.10.5",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",
     "storybook": "^5.3.19",
     "webpack-node-externals": "^2.5.0"
@@ -33,7 +35,7 @@
     "@storybook/react": "^5.3.19",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "css-loader": "^4.1.1",
+    "css-loader": "^4.2.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
