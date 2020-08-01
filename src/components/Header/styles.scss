@@ -1,0 +1,30 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $primaryColor;
+}
+
+.headerText {
+  font: $mainHeaderText;
+  color: $primaryTextColor;
+  margin: 0;
+}
+
+.headerNavigation {
+}
+
+.headerList {
+  list-style-type: none;
+}
+
+.headerLink {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
