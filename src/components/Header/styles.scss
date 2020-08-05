@@ -3,28 +3,53 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0 20px;
   background-color: $primaryColor;
 }
 
 .headerText {
   font: $mainHeaderText;
   color: $primaryTextColor;
-  margin: 0;
+  margin: 10px 30px 10px 0;
 }
 
 .headerNavigation {
+  flex: 1;
+  height: 52px;
 }
 
 .headerList {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headerListItem {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
 }
 
 .headerLink {
-  color: white;
-  text-decoration: none;
+  height: 100%;
 
   &:hover {
+    border-bottom: 4px solid $primaryTextColor;
+  }
+
+  &:hover p {
     font-weight: bold;
   }
+}
+
+.headerLinkText {
+  color: white;
+  text-decoration: none;
+  font: $headerLinkText;
+  margin: 0;
 }

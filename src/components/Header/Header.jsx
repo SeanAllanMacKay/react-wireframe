@@ -1,12 +1,7 @@
 import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import {
-  headerContainer,
-  headerText,
-  headerNavigation,
-  headerList,
-  headerLink,
-} from './styles.scss';
+import { useLocation } from 'react-router-dom';
+import Nav from './Nav.jsx';
+import { headerContainer, headerText } from './styles.scss';
 
 import ScreenContext from '@contexts/ScreenContext';
 
@@ -21,17 +16,7 @@ export default () => {
   return (
     <header className={headerContainer}>
       <h1 className={headerText}>Constructable</h1>
-      <nav className={headerNavigation}>
-        <ul className={headerList}>
-          {links.map(({ title, url }, index) => (
-            <li key={`${title}-${index}`}>
-              <Link className={headerLink} to={url}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <Nav />
     </header>
   );
 };

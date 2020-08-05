@@ -22,6 +22,7 @@ const backendConfig = {
   externals: [nodeExternals()],
   resolve: {
     alias: {
+      '@db': path.resolve(__dirname, './server/db'),
       '@routes': path.resolve(__dirname, './server/routes'),
       '@services': path.resolve(__dirname, './server/services'),
       '@middleware': path.resolve(__dirname, './server/middleware'),
