@@ -8,11 +8,7 @@ import {
   headerLinkText,
 } from './styles.scss';
 
-const links = [
-  { title: 'Test', url: '/test' },
-  { title: 'Test', url: '/test' },
-  { title: 'Test', url: '/test' },
-];
+const links = [{ title: 'Login', url: '/login' }];
 
 export default () => {
   const location = useLocation();
@@ -21,7 +17,7 @@ export default () => {
     <nav className={headerNavigation}>
       <ul className={headerList}>
         {links.map(({ title, url }, index) => (
-          <Link className={headerLink} to={url}>
+          <Link key={`${title}-${index}`} className={headerLink} to={url}>
             <li className={headerListItem} key={`${title}-${index}`}>
               <p className={headerLinkText}>{title}</p>
             </li>

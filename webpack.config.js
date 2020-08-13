@@ -9,6 +9,7 @@ const backendConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'server.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -18,6 +19,9 @@ const backendConfig = {
         use: 'babel-loader',
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   externals: [nodeExternals()],
   resolve: {

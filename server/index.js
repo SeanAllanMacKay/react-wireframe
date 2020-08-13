@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 
 import path from 'path';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import glob from 'fast-glob';
 import mongoose from 'mongoose';
 
@@ -13,6 +14,7 @@ const { PORT, DB_URL } = process.env;
 const app = express();
 const server = Server(app);
 
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.json());
 

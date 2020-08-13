@@ -25,6 +25,8 @@ router.route('/').get(async (req, res) => {
 
       const token = auth.sign({ _id: user._id });
 
+      res.cookie('auth', token, { httpOnly: true, signed: true });
+
       return res.status(200).send({ success: true, token });
     }
   );
